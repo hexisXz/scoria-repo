@@ -1,0 +1,26 @@
+#!/bin/bash
+
+pkgname='pfetch'
+
+pkgdescription='A pretty system information tool written in POSIX sh.'
+
+pkgsource='https://github.com/dylanaraps/pfetch.git'
+
+dependencies=""
+
+pkginstall='make'
+
+
+pkgconfig() {
+	if [[ "$pkginstall" == "make" ]]; then
+		cd pfetch && sudo make install 
+	fi
+}
+
+
+
+
+git clone $pkgsource
+	
+
+pkgconfig	
