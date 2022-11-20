@@ -1,0 +1,41 @@
+#!/bin/bash
+
+pkgname='lutris'
+
+pkgdescription='Lutris desktop client in Python / PyGObject'
+
+pkgsource='https://github.com/lutris/lutris.git'
+
+dependencies="python"
+
+pkginstall='make'
+
+
+pkgconfig () {
+	if command -v apt 2>/dev/null; then
+		sudo apt install python
+
+        fi
+
+
+        if command -v dnf 2>/dev/null; then
+		sudo apt install python
+
+        fi
+
+
+	if command -v pacman 2>/dev/null; then
+		sudo apt install python
+
+	fi
+
+	cd lutris && sudo make install
+
+}
+
+
+
+git clone $pkgsource
+	
+
+pkgconfig	
