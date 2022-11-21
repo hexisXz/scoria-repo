@@ -19,13 +19,13 @@ pkgconfig () {
 
 
         if command -v dnf 2>/dev/null; then
-		sudo apt install python
+		sudo dnf install python3
 
         fi
 
 
 	if command -v pacman 2>/dev/null; then
-		sudo apt install python
+		sudo pacman -S python3
 
 	fi
 
