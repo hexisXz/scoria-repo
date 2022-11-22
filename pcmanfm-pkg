@@ -1,0 +1,39 @@
+#!/bin/bash
+
+pkgname="pcmanfm"
+
+pkgdescription="Extremely fast and lightweight file manager"
+
+pkgsource="https://github.com/lxde/pcmanfm.git"
+
+dependencies=""
+
+pkginstall="make"
+
+pkmgr=""
+
+pkgconfig () {
+	if command -v apt 2>/dev/null; then
+		sudo apt install make
+
+        fi
+
+
+        if command -v dnf 2>/dev/null; then
+		sudo dnf install make
+
+        fi
+
+
+	if command -v pacman 2>/dev/null; then
+		sudo pacman -S make
+
+	fi
+
+        sudo make install --sysconfdir=/etc 
+
+}
+
+git clone $pkgsource
+
+pkgconfig
