@@ -30,7 +30,7 @@ pkgconfig () {
 
 	fi
 
-        sudo make && sudo make install 
+        sudo make install 
 
 }
 
