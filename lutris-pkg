@@ -29,7 +29,7 @@ pkgconfig () {
 
 	fi
 
-	cd lutris && sudo make install
+	cd lutris && make 
 
 }
 
