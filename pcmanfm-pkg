@@ -30,7 +30,7 @@ pkgconfig () {
 
 	fi
 
-        sudo make install --sysconfdir=/etc 
+        sudo make install 
 
 }
 
