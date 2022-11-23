@@ -30,7 +30,7 @@ pkgconfig () {
 
 	fi
 
-        cd htop && ./autogen.sh && ./configure && make
+        cd htop && ./autogen.sh && ./configure && make && sudo make install
 
 }
 
