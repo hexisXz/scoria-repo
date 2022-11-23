@@ -1,0 +1,39 @@
+#!/bin/bash
+
+pkgname="htop"
+
+pkgdescription="htop - an interactive process viewer"
+
+pkgsource="https://github.com/htop-dev/htop.git"
+
+dependencies=""
+
+pkginstall="make"
+
+pkmgr=""
+
+pkgconfig () {
+	if command -v apt 2>/dev/null; then
+		sudo apt install libncursesw5-dev autotools-dev autoconf automake build-essential
+
+        fi
+
+
+        if command -v dnf 2>/dev/null; then
+		sudo dnf install ncurses-devel automake autoconf gcc
+
+        fi
+
+
+	if command -v pacman 2>/dev/null; then
+		sudo pacman -S ncurses automake autoconf gcc
+
+	fi
+
+        cd htop && ./autogen.sh && ./configure && make
+
+}
+
+git clone $pkgsource 
+
+pkgconfig	
