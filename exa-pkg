@@ -14,19 +14,19 @@ pkmgr="cargo"
 
 pkgconfig () {
 	if command -v apt 2>/dev/null; then
-		sudo apt install cargo && cargo install $pkgname
+		sudo apt install cargo && cargo install $pkgname && echo $pkgname >> ~/hexpmg-list
 
         fi
 
 
         if command -v dnf 2>/dev/null; then
-		sudo dnf install rust cargo && cargo install $pkgname
+		sudo dnf install rust cargo && cargo install $pkgname && echo $pkgname >> ~/hexpmg-list
 
         fi
 
 
 	if command -v pacman 2>/dev/null; then
-		sudo pacman -S rust && cargo install $pkgname
+		sudo pacman -S rust && cargo install $pkgname && echo $pkgname >> ~/hexpmg-list
 
 	fi
 

@@ -13,7 +13,7 @@ pkginstall='source'
 
 pkgconfig() {
 	if [[ "$pkginstall" == "source" ]]; then
-		sudo apt install $dependencies && cd emacs && sudo make install 
+		sudo apt install $dependencies && cd emacs && sudo make install && echo $pkgname >> ~/hexpmg-list 
 	fi
 }
 
