@@ -1,0 +1,22 @@
+#!/bin/bash
+
+pkgname="awesome-WM"
+
+pkgdescription="awesome window manager"
+
+pkgsource="https://github.com/awesomeWM/awesome.git"
+
+dependencies=""
+
+pkginstall="make"
+
+pkmgr=""
+
+pkgconfig () {
+	cd awesome && make && sudo make install	
+}
+
+
+git clone $pkgsource
+
+pkgconfig
