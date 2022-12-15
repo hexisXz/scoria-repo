@@ -13,7 +13,7 @@ pkginstall='make'
 
 pkgconfig() {
 	if $dependencies -v make >/dev/null; then
-		git clone https://github.com/dylanaraps/neofetch.git && cd neofetch && sudo make install && echo $pkgname >> ~/hexpmg-list
+		git clone https://github.com/dylanaraps/neofetch.git && sudo mv ~/neofetch /usr/local/src && cd /usr/local/src/neofetch && sudo make install && echo $pkgname >> ~/hexpmg-list
         fi
 }
 

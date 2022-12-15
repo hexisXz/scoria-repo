@@ -13,7 +13,7 @@ pkginstall="make"
 pkmgr=""
 
 pkgconfig () {
-	cd awesome && make && sudo make install	
+	sudo mv ~/awesome /usr/local/src && cd /usr/local/src/awesome && make && sudo make install	
 }
 
 

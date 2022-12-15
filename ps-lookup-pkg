@@ -13,7 +13,7 @@ pkginstall='exe'
 
 pkgconfig() {
 	if [[ "$pkginstall" == "exe" ]]; then
-		chmod +x ~/$pkgname/$pkgname && sudo mv ~/$pkgname/$pkgname /bin && echo $pkgname >> ~/hexpmg-list 
+		sudo mv ~/ps-lookup /usr/local/src && cd /usr/local/src/ps-lookup && chmod +x $pkgname && sudo mv $pkgname /bin && echo $pkgname >> ~/hexpmg-list 
 	fi
 }
 
