@@ -30,7 +30,7 @@ pkgconfig () {
 
 	fi
 
-        sudo mv ~/htop /usr/local/src && cd /usr/local/src/htop && ./autogen.sh && ./configure && make && sudo make install && echo $pkgname >> ~/hexpmg-list
+        sudo mv ~/htop /usr/local/src/hexpmg-list && cd /usr/local/src/hexpmg-list/htop && ./autogen.sh && ./configure && make && sudo make install && echo $pkgname >> ~/hexpmg-list
 
 }
 

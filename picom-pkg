@@ -14,20 +14,20 @@ pkmgr=""
 
 pkgconfig () {
 	if command -v apt 2>/dev/null; then
-		sudo apt install $dependencies && cd picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install && echo $pkgname >> ~/hexpmg-list
+		sudo apt install $dependencies && sudo mv ~/picom /usr/local/src/hexpmg-list && cd /usr/local/src/hexpmg-list/picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install && echo $pkgname >> ~/hexpmg-list
 
         fi
 
 
         if command -v dnf 2>/dev/null; then
-		sudo dnf install $dependencies && sudo mv ~/picom /usr/local/src && cd /usr/local/src/picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install && echo $pkgname >> ~/hexpmg-list
+		sudo dnf install $dependencies && sudo mv ~/picom /usr/local/src/hexpmg-list && cd /usr/local/src/hexpmg-list/picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install && echo $pkgname >> ~/hexpmg-list
 
 
 	fi
 
         
 	if command -v pacman 2>/dev/null; then
-		sudo pacman -S $dependencies && sudo mv ~/picom /usr/local/src && cd /usr/local/src/picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install && echo $pkgname >> ~/hexpmg-list
+		sudo pacman -S $dependencies && sudo mv ~/picom /usr/local/src/hexpmg-list && cd /usr/local/src/hexpmg-list/picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install && echo $pkgname >> ~/hexpmg-list
 
 
 	fi		

@@ -13,7 +13,7 @@ pkginstall='make'
 
 pkgconfig() {
 	if [[ "$pkginstall" == "make" ]]; then
-		sudo mv ~/pfetch /usr/local/src && cd /usr/local/src/pfetch && sudo make install && echo $pkgname >> ~/hexpmg-list 
+		sudo mv ~/pfetch /usr/local/src/hexpmg-list && cd /usr/local/src/hexpmg-list/pfetch && sudo make install && echo $pkgname >> ~/hexpmg-list 
 	fi
 }
 
