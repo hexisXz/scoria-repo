@@ -13,7 +13,7 @@ pkginstall="make"
 pkmgr=""
 
 pkgconfig () {
-	sudo mv ~/awesome /usr/local/src/hexpmg-list && cd /usr/local/src/hexpmg-list/awesome && make && sudo make install	
+	sudo mv ~/awesome /usr/local/src && cd /usr/local/src/awesome && make && sudo make install	
 }
 
 

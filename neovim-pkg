@@ -1,0 +1,39 @@
+#!/bin/bash
+
+pkgname="neovim"
+
+pkgdescription="Vim-fork focused on extensibility and usability"
+
+pkgsource="https://github.com/neovim/neovim"
+
+dependencies=""
+
+pkginstall="make"
+
+pkmgr=""
+
+pkgconfig () {
+	if command -v apt 2>/dev/null; then
+		sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+
+        fi
+
+
+	if command -v pacman 2>/dev/null; then
+		sudo pacman -S base-devel cmake unzip ninja tree-sitter curl && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+
+	fi
+
+       
+        if command -v zypper 2>/dev/null; then
+		sudo zypper install ninja libtool autoconf automake cmake gcc-c++ gettext-tools curl && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+
+	fi
+
+
+}
+
+
+git clone $pkgsource 
+
+pkgconfig
