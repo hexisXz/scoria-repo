@@ -1,0 +1,21 @@
+#!/bin/bash
+
+pkgname='btop'
+
+pkgdescription='A monitor of resources'
+
+pkgsource='https://github.com/aristocratos/btop.git'
+
+dependencies="make"
+
+pkginstall='make'
+
+
+pkgconfig() {
+	if $dependencies -v make >/dev/null; then
+		git clone $pkgsource && cd $pkgname && make && sudo make install
+        fi
+}
+
+
+pkgconfig
