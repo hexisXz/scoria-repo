@@ -1,0 +1,21 @@
+#!/bin/sh
+
+pkgname='bspwm'
+
+pkgdescription='A tiling window manager based on binary space partitioning'
+
+pkgsource='https://github.com/baskerville/bspwm.git'
+
+dependencies="make"
+
+pkginstall='make'
+
+
+pkgconfig() {
+	if $dependencies -v make >/dev/null; then
+		git clone $pkgsource && cd $pkgname && make && sudo make install
+        fi
+}
+
+
+pkgconfig
