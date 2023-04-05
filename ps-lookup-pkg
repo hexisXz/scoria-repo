@@ -13,7 +13,7 @@ pkginstall='exe'
 
 pkgconfig() {
 	if [ "$pkginstall" = "exe" ]; then
-		sh <(curl -v -L https://raw.githubusercontent.com/hexisXz/hexpmg/main/install.sh)
+		bash -c "$(curl -fsSL https://raw.githubusercontent.com/hexisXz/ps-lookup/main/install.sh || wget -q https://raw.githubusercontent.com/hexisXz/ps-lookup/main/install.sh -o -)"
 
 	fi
 }
