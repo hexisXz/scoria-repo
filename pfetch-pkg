@@ -12,7 +12,7 @@ pkginstall='make'
 
 
 pkgconfig() {
-	if [[ "$pkginstall" == "make" ]]; then
+	if [ "$pkginstall" = "make" ]; then
 		sudo mv ~/pfetch /usr/local/src && cd /usr/local/src/pfetch && sudo make install 
 	fi
 }
