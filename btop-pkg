@@ -13,7 +13,7 @@ pkginstall='make'
 
 pkgconfig() {
 	if $dependencies -v make >/dev/null; then
-		git clone $pkgsource && sudo mv $pkgname /usr/local/src/ && cd /usr/loacal/src/$pkgname && make && sudo make install
+		git clone $pkgsource && sudo mv $pkgname /usr/local/src/ && cd /usr/local/src/$pkgname && make && sudo make install
         fi
 }
 
