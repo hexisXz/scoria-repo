@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git clone https://github.com/terroo/wallset down-wallset && cd down-wallset && sudo sh install.sh uninstall && sudo rm -r down-wallset
+git clone https://github.com/terroo/wallset down-wallset && cd down-wallset && exec install.sh uninstall && sudo rm -r down-wallset
