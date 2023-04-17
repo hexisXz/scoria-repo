@@ -14,26 +14,22 @@ pkmgr=""
 
 pkgconfig () {
 	if command -v apt 2>/dev/null; then
-		sudo apt install libncursesw5-dev autotools-dev autoconf automake build-essential libncurses5  
+		sudo apt install libncursesw5-dev autotools-dev autoconf automake build-essential libncurses5 && sudo mv htop /usr/local/src && cd /usr/local/src/htop && ./autogen.sh && ./configure && make && sudo make install
 
         fi
 
 
         if command -v dnf 2>/dev/null; then
-		sudo dnf install ncurses-devel automake autoconf gcc ncurses
+		sudo dnf install ncurses-devel automake autoconf gcc ncurses && sudo mv htop /usr/local/src && cd /usr/local/src/htop && ./autogen.sh && ./configure && make && sudo make install
 
         fi
 
 
 	if command -v pacman 2>/dev/null; then
-		sudo pacman -S ncurses automake autoconf gcc ncurses
+		sudo pacman -S ncurses automake autoconf gcc ncurses && sudo mv htop /usr/local/src && cd /usr/local/src/htop && ./autogen.sh && ./configure && make && sudo make install
 
 	fi
 
-        sudo mv htop /usr/local/src && cd /usr/local/src/htop && ./autogen.sh && ./configure && make && sudo make install
-
 }
 
-git clone $pkgsource 
-
-pkgconfig	
+git clone $pkgsource && pkgconfig	
