@@ -18,12 +18,6 @@ pkgconfig() {
 	fi
 }
 
-
-
-
-git clone $pkgsource
-	
-
 pkgconfig	
 
 
