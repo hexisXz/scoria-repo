@@ -12,9 +12,24 @@ pkginstall='make'
 
 
 pkgconfig() {
-	if $dependencies -v make >/dev/null; then
-		git clone $pkgsource && sudo mv $pkgname /usr/local/src/ && cd /usr/local/src/$pkgname && make && sudo make install
-        fi
+	if command -v apt 2>/dev/null; then
+		sudo apt install make && git clone $pkgsource && sudo mv $pkgname /usr/local/src/ && cd /usr/local/src/$pkgname && make && sudo make install
+	fi
+
+
+	if command -v xbps-install 2>/dev/null; then
+		sudo xbps-install make && git clone $pkgsource && sudo mv $pkgname /usr/local/src/ && cd /usr/local/src/$pkgname && make && sudo make install
+	fi
+
+
+	if command -v pacman 2>/dev/null; then
+		sudo pacman -S make && git clone $pkgsource && sudo mv $pkgname /usr/local/src/ && cd /usr/local/src/$pkgname && make && sudo make install
+	fi
+
+
+	if command -v dnf 2>/dev/null; then
+		sudo dnf install make && git clone $pkgsource && sudo mv $pkgname /usr/local/src/ && cd /usr/local/src/$pkgname && make && sudo make install
+	fi
 }
 
 

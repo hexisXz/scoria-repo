@@ -30,7 +30,14 @@ pkgconfig () {
 		sudo pacman -S $dependencies && sudo mv ~/picom /usr/local/src && cd /usr/local/src/picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install
 
 
-	fi		
+	fi
+
+
+
+	if command -v xbps-install 2>/dev/null; then
+		sudo xbps-install $dependencies && sudo mv ~/picom /usr/local/src && cd /usr/local/src/picom && git submodule update --init --recursive && meson --buildtype=release . build && ninja -C build && sudo ninja -C build install
+
+	fi
 
 
 

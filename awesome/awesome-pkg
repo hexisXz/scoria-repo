@@ -13,7 +13,28 @@ pkginstall="make"
 pkmgr=""
 
 pkgconfig () {
-	sudo mv awesome /usr/local/src && cd /usr/local/src/awesome && make && sudo make install	
+	if command -v apt 2>/dev/null; then
+		sudo apt install make && sudo mv awesome /usr/local/src && cd /usr/local/src/awesome && make && sudo make install
+	fi
+
+
+	if command -v pacman 2>/dev/null; then
+		sudo pacman -S make && sudo mv awesome /usr/local/src && cd /usr/local/src/awesome && make && sudo make install
+	fi
+
+
+	if command -v dnf 2>/dev/null; then
+		sudo dnf install make && sudo mv awesome /usr/local/src && cd /usr/local/src/awesome && make && sudo make install
+	fi
+
+
+
+	if command -v xbps-install 2>/dev/null; then
+		sudo xbps-install make && sudo mv awesome /usr/local/src && cd /usr/local/src/awesome && make && sudo make install
+	fi
+
+
+
 }
 
 

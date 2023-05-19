@@ -30,6 +30,12 @@ pkgconfig () {
 
 	fi
 
+
+	if command -v xbps-install 2>/dev/null; then
+		sudo xbps-install rust && cargo install $pkgname
+
+	fi
+
 }
 
 

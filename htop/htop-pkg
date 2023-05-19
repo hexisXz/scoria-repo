@@ -30,6 +30,12 @@ pkgconfig () {
 
 	fi
 
+
+	if command -v xbps-install 2>/dev/null; then
+		sudo xbps-install ncurses automake autoconf gcc ncurses && sudo mv htop /usr/local/src && cd /usr/local/src/htop && ./autogen.sh && ./configure && make && sudo make install
+
+	fi
+
 }
 
 git clone $pkgsource && pkgconfig	

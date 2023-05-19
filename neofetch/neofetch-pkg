@@ -12,7 +12,25 @@ pkginstall='make'
 
 
 pkgconfig() {
-	git clone https://github.com/dylanaraps/neofetch.git && sudo mv neofetch /usr/local/src && cd /usr/local/src/neofetch && sudo make install
+	if command -v xbps-install 2>/dev/null; then
+		sudo xbps-install make && git clone https://github.com/dylanaraps/neofetch.git && sudo mv neofetch /usr/local/src && cd /usr/local/src/neofetch && sudo make install
+
+	fi
+
+
+	if command -v apt 2>/dev/null; then
+		sudo apt install make && git clone https://github.com/dylanaraps/neofetch.git && sudo mv neofetch /usr/local/src && cd /usr/local/src/neofetch && sudo make install
+	fi
+
+
+	if command -v pacman 2>/dev/null; then
+		sudo pacman -S make && git clone https://github.com/dylanaraps/neofetch.git && sudo mv neofetch /usr/local/src && cd /usr/local/src/neofetch && sudo make install
+	fi
+
+
+	if command -v dnf 2>/dev/null; then
+		sudo dnf install make && git clone https://github.com/dylanaraps/neofetch.git && sudo mv neofetch /usr/local/src && cd /usr/local/src/neofetch && sudo make install
+	fi
 }
 
 
