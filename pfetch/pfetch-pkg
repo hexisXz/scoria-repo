@@ -35,7 +35,7 @@ pkgconfig() {
 
 
 
-git clone $pkgsource
+git clone --quiet $pkgsource
 	
 
 pkgconfig	
